@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <malloc.h>
+#include <string.h>
 
 struct Array {
     float* points;
@@ -15,6 +16,10 @@ int add_point(float num) {
 void init_array(){
     array.size = 0;
     array.points = (float*) malloc(0*sizeof(float));
+}
+
+void free_array(){
+    free(array.points);
 }
 
 void print_array(){
@@ -48,20 +53,34 @@ float sum_array(){
     return out;
 }
 
+
+
 void print_avg(){
     float total = sum_array();
     float avg = total / array.size;
     printf("Average: %f\n", avg);
 }
 
-int main(){
+int main_avg(){
     init_array();
     
     input_data();
     
     print_avg();
-    
-    print_array();
+}
+
+int main(){
+    while(1){
+        main_avg();
+        char again[1];
+        printf("Again? [y/n]\n");
+        scanf("%s", again);
+        if(strcmp(again, "y") == 0){
+            main_avg();
+        }else{
+            break;
+        }
+    }
 
     return 0;
 }
