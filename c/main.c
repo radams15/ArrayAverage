@@ -81,15 +81,16 @@ int main_avg(){
     scanf("%s", again); // copy user input to again var
 
     if(again[0] == 'y' || again[0] == 'Y'){ // if variable is y
+        reset_array();
         return 1; // repeat
     }
     return 0; // do not repeat
 }
 
 int main(){
-    while(main_avg()){ reset_array(); }
+    while(main_avg()){ /* Do Nothing */ } // repeat the main_avg function until user no longer needs to.
 
-    free_array();
+    free_array(); // free the allocated memory
 
     return 0;
 }
