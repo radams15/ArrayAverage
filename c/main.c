@@ -1,11 +1,3 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <stdio.h>
 #include <malloc.h>
 
@@ -31,12 +23,24 @@ void print_array(){
     }
 }
 
+void input_data(){
+    while(1){
+        float in;
+        
+        if(in == -1){
+            break;
+        }
+        
+        printf("=> ");
+        scanf("%f", &in);
+        add_point(in);
+    }
+}
+
 int main(){
     init_array();
     
-    add_point(1);
-    add_point(10);
-    add_point(55);
+    input_data();
     
     print_array();
 
