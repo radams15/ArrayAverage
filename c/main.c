@@ -27,20 +27,39 @@ void input_data(){
     while(1){
         float in;
         
+        printf("=> ");
+        scanf("%f", &in);
+        
         if(in == -1){
             break;
         }
         
-        printf("=> ");
-        scanf("%f", &in);
         add_point(in);
     }
+}
+
+float sum_array(){
+    float out=0;
+    
+    for(int i=0 ; i<array.size ; i++){
+        out += array.points[i];
+    }
+    
+    return out;
+}
+
+void print_avg(){
+    float total = sum_array();
+    float avg = total / array.size;
+    printf("Average: %f\n", avg);
 }
 
 int main(){
     init_array();
     
     input_data();
+    
+    print_avg();
     
     print_array();
 
