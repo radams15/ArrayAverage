@@ -55,7 +55,11 @@ public class Main {
 
             double avg = calculateAverage(nums); // calculate the average of all the numbers
 
-            System.out.printf("Average Is %f%n", avg);
+            if(Double.isNaN(avg)){
+                System.out.println("Sorry, no values were input");
+            }else {
+                System.out.printf("Average Is %f%n", avg);
+            }
 
             System.out.print("Again? [y/n]"); // prompt to ask user to go again
             String answer = in.nextLine(); // get the next line of input
