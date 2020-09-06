@@ -1,4 +1,3 @@
-import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -49,6 +48,6 @@ public class Main {
     }
 
     public static void main(String args[]){
-        new Main(args);
+        new Main(args); // initialise the class
     }
 }
